@@ -1,0 +1,37 @@
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+Gemfile.lock
+.DS_Store
+*.gem
+.bundle/
+vendor/bundle/
+
+# Python
+__pycache__/
+*.pyc
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.venv/
+venv/
+*.egg-info/
+
+# Secrets / credentials
+.env
+.env.*
+*.pem
+*.key
+*credentials*.json
+*creds*.json
+*secrets*
+
+# Editor / OS
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+
+# Local Claude Code settings (machine-specific, may contain local paths)
+.claude/settings.local.json

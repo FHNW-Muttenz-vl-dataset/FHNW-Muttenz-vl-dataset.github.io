@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Ebene_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 442 104">
+  <!-- Generator: Adobe Illustrator 29.3.1, SVG Export Plug-In . SVG Version: 2.1.0 Build 151)  -->
+  <defs>
+    <style>
+      .st0 {
+        stroke: #fde70e;
+        stroke-dasharray: 3 4;
+        stroke-width: 2.5px;
+      }
+
+      .st0, .st1 {
+        fill: none;
+      }
+
+      .st1 {
+        stroke: #154c57;
+        stroke-linecap: round;
+        stroke-width: 13px;
+      }
+
+      .st2 {
+        fill: #8a97a0;
+        font-size: 29px;
+      }
+
+      .st2, .st3 {
+        font-family: ArialMT, Arial;
+        isolation: isolate;
+      }
+
+      .st3 {
+        fill: #154c57;
+        font-size: 48px;
+      }
+
+      .st4 {
+        fill: #fde70e;
+      }
+    </style>
+  </defs>
+  <line class="st1" x1="16" y1="52" x2="86" y2="52"/>
+  <line class="st1" x1="51" y1="17" x2="51" y2="87"/>
+  <circle class="st0" cx="51" cy="52" r="17"/>
+  <circle class="st4" cx="51" cy="52" r="7"/>
+  <text class="st3" transform="translate(106 46)"><tspan x="0" y="0">FHNW Muttenz</tspan></text>
+  <text class="st2" transform="translate(106 88)"><tspan x="0" y="0">visual localization dataset</tspan></text>
+</svg>
