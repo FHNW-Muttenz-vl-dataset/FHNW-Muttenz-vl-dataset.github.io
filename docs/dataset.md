@@ -11,7 +11,7 @@ This dataset currently consists of two reference mapping campaigns covering the 
 
 ## Study area
 
-The study area (Figure 1) encompasses various districts of Muttenz, a suburban municipality near Basel, Switzerland. The areas covered include parts of a historic town center dating back to the 17th century, commercial areas, residential areas with detached houses, multi-story apartment buildings, diverse vegetation, and a mixed industrial area with production facilities and brownfield sites with parked vehicles and trucks. The road network, with a length of approximately 10 km, exhibits substantial heterogeneity, encompassing multi-lane roads, intersections with tram lines, wide pedestrian sidewalks, and ordinary two- and single-lane roads in residential areas.
+The study area (Figure 1) encompasses various districts of Muttenz, a suburban municipality near Basel, Switzerland. The areas covered include parts of a historic town center, commercial areas, residential areas with detached houses, multi-story apartment buildings, diverse vegetation, and a mixed industrial area with production facilities and brownfield sites with parked vehicles and trucks. The road network, with a length of approximately 10 km, exhibits substantial heterogeneity, encompassing multi-lane roads, intersections with tram lines, wide pedestrian sidewalks, and ordinary two- and single-lane roads in residential areas.
 
 
 ![Study area overview](assets/images/study_area.jpg)
@@ -26,9 +26,28 @@ The study area (Figure 1) encompasses various districts of Muttenz, a suburban m
 - **2025** - 03 / 04 February 2025 - acquisition of query images
 - **2025** - 11 March 2025 - second mobile-mapping campaign
 
+## Versions
+
+**v2.0 is the current version of the query data. It replaces v1.0 and is the version used in [our paper](publications.md).**
+v1.0 remains available in the [archive](download.md#archive-superseded-versions).
+
+**Frame names cannot be compared between v1.0 and v2.0.** The same file name usually shows a different image in the two versions. Results, pose files or image lists keyed to v1.0 names do not carry over to v2.0.
+
+|                         | v1.0 (27 July 2026)                                                 | v2.0 (8 November 2026)                                                                         |
+| ----------------------- | ------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| Frame numbering         | Order returned by the file system, not chronological                | Sorted by source file name, in capture order                                                   |
+| iPhone frames           | Roughly every 5th frame, at irregular intervals                     | Every 5th frame, starting with the first                                                       |
+| Canon and GoPro frames  | Same frames as v2.0, numbered differently                           | Same frames as v1.0, numbered differently                                                      |
+| Camera folder names     | `canon_eosr_24mm`, `canon_eosr_35mm`, `gopro_hero7`, `iphone_14pro` | `canon-eosr-24mm`, `canon-eosr-35mm`, `gopro-hero7`, `iphone-14pro`                            |
+| Images                  | Earlier export                                                      | Re-exported and re-anonymized                                                                  |
+| Poses and focal lengths | Earlier adjustment                                                  | Updated: the self-calibrating SfM process was rerun without the affinity and skew terms b1, b2 |
+{: .plain-table }
+
+The number of images per sequence is the same in both versions. Of the 1,874 iPhone images in v2.0, 338 are also in v1.0, under different numbers. Poses in v1.0 remain valid for the v1.0 images, but v1.0 sequences are not in temporal order, so they should not be treated as continuous trajectories. The reason for the updated poses and focal lengths is described under [Calibration](dataset/query-sequences.md#calibration).
+
 ## Ground-truth generation
 
-**Ground-truth poses exhibit relative accuracies (co-registration accuracy) of < 1 cm**. The procedure for ground-truth pose generation differs for each dataset component — see [Reference Data](dataset/reference-data.md) and [Query Sequences](dataset/query-sequences.md) for details on the respective co-registration and georeferencing procedures and achieved accuracies.
+**Ground-truth poses are accurate to 6–9 mm in position and well below 0.1° in orientation, relative to the reference imagery.** The procedure for ground-truth pose generation differs for each dataset component — see [Reference Data](dataset/reference-data.md) and [Query Sequences](dataset/query-sequences.md) for details on the respective co-registration and georeferencing procedures and achieved accuracies.
 
 ## Data format
 
@@ -68,16 +87,19 @@ Reference_campaigns/
 ```
 Query_sequences/
 ├── scene_1/
-│   ├── canon_eosr_24mm/
+│   ├── canon-eosr-24mm/
 │   │   └── 0
 │   │       ├── camera_info.json
 │   │       ├── poses.json
 │   │       └── images/
 │   │           └── 1_canon-eosr-24mm_0_2025-02-04_00000.jpg
-│   ├── canon_eosr_35mm/            # same internal layout
-│   ├── gopro_hero7/                # same internal layout
-│   └── iphone_14pro/               # same internal layout
-└── scene_2/ … scene_5/             # identical layout
+│   ├── canon-eosr-35mm/            # same internal layout
+│   ├── gopro-hero7/                # same internal layout
+│   └── iphone-14pro/               # same internal layout
+├── scene_2/ … scene_5/             # identical layout
+└── archive/
+    └── v1.0/                       # superseded query data (see Versions)
+        └── scene_1_v1.0.zip … scene_5_v1.0.zip
 ```
 
 #### Metadata schema
@@ -120,7 +142,7 @@ Query_sequences/
     "projection_type": "perspective",
     "width": 6720,
     "height": 4480,
-    "focal_length_px": 4600.7663
+    "focal_length_px": 4609.91296
 }
 ```
 

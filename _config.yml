@@ -1,5 +1,5 @@
 title: FHNW Muttenz visual localization dataset
-description: A large-scale, real-world high-resolution street-level visual localization dataset with sub-centimeter-accurate 6-DoF ground-truth poses — built to test whether visual localization can match survey-grade GNSS positioning.
+description: A large-scale, real-world high-resolution street-level visual localization dataset with 6-DoF ground-truth poses accurate to 6–9 mm in position and below 0.1° in orientation — built to test whether visual localization can match survey-grade GNSS positioning.
 theme: just-the-docs
 source: docs
 exclude:
@@ -27,6 +27,13 @@ color_scheme: custom
 search_enabled: true
 heading_anchors: true
 enable_copy_code_button: true
+callouts:
+  note:
+    title: Note
+    color: blue
+  important:
+    title: Important
+    color: red
 footer_content: "Jonas Meyer © 2026."
 
 # Navigation

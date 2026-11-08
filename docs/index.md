@@ -6,7 +6,7 @@ nav_order: 1
 
 # FHNW Muttenz visual localization dataset
 
-**A large-scale, real-world high-resolution street-level visual localization dataset with sub-centimeter-accurate 6-DoF ground-truth poses — built to test whether visual localization can match survey-grade GNSS positioning (< 5 cm accuracy under favorable conditions).**
+**A large-scale, real-world high-resolution street-level visual localization dataset with 6-DoF ground-truth poses accurate to 6–9 mm in position and below 0.1° in orientation — built to test whether visual localization can match survey-grade GNSS positioning (< 5 cm accuracy under favorable conditions).**
 
 ![Graphical abstract](assets/images/graphical_abstract.jpg)
 
@@ -19,7 +19,9 @@ nav_order: 1
 | Coverage                     | Contiguous street network, ~10 km             |
 | Reference mapping campaigns  | 2 (2023, 2025; ~1.5 years apart)               |
 | Query sequences       | 20 (5 scenes each captured with 4 cameras)                                              |
-| Ground-truth pose accuracy   | < 1 cm co-registration; 1–3 cm georeferencing |
+| Query images          | 5,399                                         |
+| Ground-truth pose accuracy (co-registration) | 6–9 mm in position, < 0.1° in orientation |
+| Georeferencing accuracy      | 2.5 cm                                        |
 {: .plain-table }
 
 ---

@@ -143,7 +143,7 @@ During the reference mapping campaigns, all cameras were triggered synchronously
   </tbody>
 </table>
 
-***Table 2:*** *Number of reference images acquired for our dataset grouped by campaign and camera system.*
+***Table 2:*** *Number of reference images acquired for our dataset grouped by campaign and camera system. The panorama counts are the total over the five camera heads (4,027 and 4,170 images per head in 2023 and 2025).*
 
 
 
@@ -155,29 +155,32 @@ All camera systems are pre-calibrated, yielding distortion-free images; stereo c
 
 Initial image poses are computed via integrated georeferencing, using 32 ground control points (GCPs) determined by RTK-GNSS and evenly distributed across the mapping perimeter, giving a default georeferencing accuracy in the sub-decimeter range.
 
-A two-step strategy is applied to refine the image poses to sub-centimeter accuracy:
+A two-step strategy is applied to refine the image poses to millimeter-level relative accuracy:
   1. **Per-campaign image-based georeferencing** — bundle adjustment refinement in Agisoft Metashape, with stereo and panorama systems modeled as multi-camera rigs using relative orientation constraints; integrated-georeferencing poses are used to efficiently select image pairs for matching
-  2. **Cross-campaign co-registration** — a global bundle adjustment incorporating 76 GCPs (RTK-GNSS) and 180 manually measured tie points (TPs, each identified across ~10 images per campaign), together with the initial 6-DoF image poses (GCP positional standard deviation 5 cm; image pose translation standard deviation 10 cm, rotation standard deviation 1°)
+  2. **Cross-campaign co-registration** — a global bundle adjustment incorporating 69 GCPs (RTK-GNSS; of these, 66 were measurable in the 2023 imagery and 46 in the 2025 imagery, 43 of them in both) and 180 manually measured tie points (TPs, each identified across ~10 images per campaign), together with the initial 6-DoF image poses (GCP positional standard deviation 5 cm; image pose translation standard deviation 10 cm, rotation standard deviation 1°)
 
-**Co-registration accuracy** is validated using 29 independent tie points (ITPs), excluded from the bundle adjustment, by triangulating GCP/TP/ITP 3D coordinates independently per campaign and comparing the 2023 and 2025 campaigns (Table 3). The results confirm sub-centimeter co-registration accuracy.
+**Co-registration accuracy** is validated using 29 independent tie points (ITPs), excluded from the bundle adjustment, by triangulating GCP/TP/ITP 3D coordinates independently per campaign and comparing the 2023 and 2025 campaigns (Table 3). The results confirm millimeter-level co-registration accuracy (all below 1 cm).
 
 <table class="mm-table">
   <thead>
     <tr>
       <th class="col-left">Point type</th>
       <th># Points</th>
+      <th>X RMSE [m]</th>
+      <th>Y RMSE [m]</th>
+      <th>Z RMSE [m]</th>
       <th>3D RMSE [m]</th>
     </tr>
   </thead>
   <tbody>
-    <tr><td class="col-left">GCPs</td><td>43</td><td>0.002</td></tr>
-    <tr><td class="col-left">TPs</td><td>180</td><td>0.006</td></tr>
-    <tr><td class="col-left">ITPs</td><td>29</td><td>0.005</td></tr>
+    <tr><td class="col-left">GCPs</td><td>43</td><td>0.001</td><td>0.002</td><td>0.001</td><td>0.002</td></tr>
+    <tr><td class="col-left">TPs</td><td>180</td><td>0.004</td><td>0.004</td><td>0.002</td><td>0.006</td></tr>
+    <tr><td class="col-left">ITPs</td><td>29</td><td>0.003</td><td>0.003</td><td>0.002</td><td>0.005</td></tr>
   </tbody>
 </table>
 ***Table 3:*** *Co-registration accuracy between the 2023 and 2025 reference campaigns.*
 
-**Absolute georeferencing accuracy**, assessed separately per campaign from GCP residuals, is a few centimeters (Table 4).
+**Absolute georeferencing accuracy**, assessed separately per campaign from GCP residuals, is a few centimeters (Table 4). These GCPs were also used in the bundle adjustment, so this is an internal measure of accuracy rather than an independent validation.
 
 <table class="mm-table">
   <thead>
