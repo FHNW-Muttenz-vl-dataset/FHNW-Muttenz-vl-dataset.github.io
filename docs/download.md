@@ -25,6 +25,11 @@ This dataset is licensed under the [**Creative Commons Attribution-NonCommercial
 {: .note }
 By downloading this dataset, you agree to the terms of the [License](#license).
 
+{: .important }
+> **The query bundles were updated with v2.0.** Frame names and the iPhone frame subset differ from v1.0, so the two versions cannot be mixed. See [Versions](dataset.md#versions).
+>
+> v1.0 remains available in the `archive/v1.0/` folder of the Query Sequences download (see the [archive](#archive-superseded-versions) below) and is superseded by v2.0. Its bundles unpack to the same folder names as v2.0 (`scene_1/` to `scene_5/`), so please unpack the two versions into separate folders.
+
 | **Reference Data**    | [Download link](https://kdrive.infomaniak.com/app/share/1918313/e80814a5-47d4-44b9-baa5-83b693b2717c) |
 | **Query Sequences**   | [Download link](https://kdrive.infomaniak.com/app/share/1918313/5884136c-ccbd-4d79-a16a-1629e109c249) |
 {: .plain-table }
@@ -62,6 +67,22 @@ Use these SHA-256 checksums to verify the completeness/integrity of a downloaded
   </thead>
   <tbody>
     {% for bundle in group.items %}<tr><td>{{ bundle.label }}</td><td><code>{{ bundle.file }}</code> ({{ bundle.size_gb | default: "TODO" }} GB)</td><td><code class="copyable">{{ bundle.sha256 | default: "TODO" }}</code></td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endfor %}
+
+### Archive (superseded versions)
+
+{% for archived in site.data.checksums.archived %}
+**{{ archived.version }}** ({{ archived.status }}): the query bundles were replaced by v2.0. Frame names and the iPhone frame subset differ from v2.0, so the two versions cannot be mixed. See [Versions](dataset.md#versions). Unpack v1.0 and v2.0 into separate folders.
+
+<table class="checksum-table">
+  <thead>
+    <tr><th>Scene</th><th>File name</th><th>SHA-256 checksum</th></tr>
+  </thead>
+  <tbody>
+    {% for bundle in archived.bundles %}<tr><td>{{ bundle.label }}</td><td><code>{{ bundle.file }}</code> ({{ bundle.size_gb }} GB)</td><td><code class="copyable">{{ bundle.sha256 }}</code></td></tr>
     {% endfor %}
   </tbody>
 </table>

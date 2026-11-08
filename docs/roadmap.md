@@ -7,7 +7,7 @@ nav_order: 4
 # Roadmap
 
 The FHNW Muttenz visual localization dataset is an ongoing effort. This page tracks planned extensions and gives an idea of where the project is heading.
-Release dates depend on the review process of the associated publications, so we give status rather than target dates. This page is updated as items progress; last updated 28 July 2026.
+Release dates depend on the review process of the associated publications, so we give status rather than target dates. This page is updated as items progress; last updated 4 November 2026.
 
 ## Planned extensions
 
@@ -17,8 +17,8 @@ The FHNW Muttenz visual localization dataset currently contains only a limited r
 ### Aerial imagery (**In processing**)
 By providing precisely georeferenced and co-registered aerial imagery, the FHNW Muttenz visual localization dataset will also enable the validation of cross-view visual localization methods. Oblique imagery of the full road network was captured in April/May 2026 using a DJI Mini 3 Pro. Georeferencing and co-registration are in progress.
 
-### Reference mapping campaign (**Scheduled**)
-A third reference mapping campaign is planned. This campaign will cover the complete study area and will take place in late summer / early autumn 2026. The imagery will be co-registered to the existing two reference mapping campaigns with a targeted accuracy in the millimeter range (better than 1 cm).
+### Reference mapping campaign (**In processing**)
+A third reference mapping campaign covering the complete study area has been acquired. Georeferencing and co-registration are underway; no release date is set. The imagery will be co-registered to the existing two reference mapping campaigns with a targeted accuracy in the millimeter range (better than 1 cm).
 
 ### Release of raw image data (**Planned**)
 Currently, all query images provided are undistorted, using the camera calibration parameters obtained during ground-truth pose generation. To enable real-world applications, visual localization methods need to work with uncalibrated imagery. Therefore, we plan to release the raw imagery.
