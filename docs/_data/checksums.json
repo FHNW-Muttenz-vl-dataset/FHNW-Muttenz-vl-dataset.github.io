@@ -89,35 +89,35 @@
         {
           "group": "Query data",
           "label": "Scene 1",
-          "file": "archive/v1.0/scene_1_v1.0.zip",
+          "file": "archive/v01/scene_1.zip",
           "size_gb": 5.08,
           "sha256": "f8edcc3f52657ad42568b2abc76cd9c46cc6788865a6785bb0217390523de7e3"
         },
         {
           "group": "Query data",
           "label": "Scene 2",
-          "file": "archive/v1.0/scene_2_v1.0.zip",
+          "file": "archive/v01/scene_2.zip",
           "size_gb": 4.4,
           "sha256": "7da9ee964eb98316e74d2d2c7288953168eb2eaa02ac11bfb8e5c9a07ffbb1f5"
         },
         {
           "group": "Query data",
           "label": "Scene 3",
-          "file": "archive/v1.0/scene_3_v1.0.zip",
+          "file": "archive/v01/scene_3.zip",
           "size_gb": 3.37,
           "sha256": "b64ac09e60e1fe5061f9a7fdadf913a344101f903b3b428ee275f62ad62b9586"
         },
         {
           "group": "Query data",
           "label": "Scene 4",
-          "file": "archive/v1.0/scene_4_v1.0.zip",
+          "file": "archive/v01/scene_4.zip",
           "size_gb": 4.61,
           "sha256": "b7ae9c59de24da9088589fe6679b87a64940baf77a816e7b881642a1bb9df044"
         },
         {
           "group": "Query data",
           "label": "Scene 5",
-          "file": "archive/v1.0/scene_5_v1.0.zip",
+          "file": "archive/v01/scene_5.zip",
           "size_gb": 5.08,
           "sha256": "b14bfaf364a4c834926270d64d7d5ebd3ebf4d7a60ad4be65fbc29a118b7d276"
         }

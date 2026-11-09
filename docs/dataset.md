@@ -33,17 +33,16 @@ v1.0 remains available in the [archive](download.md#archive-superseded-versions)
 
 **Frame names cannot be compared between v1.0 and v2.0.** The same file name usually shows a different image in the two versions. Results, pose files or image lists keyed to v1.0 names do not carry over to v2.0.
 
-|                         | v1.0 (27 July 2026)                                                 | v2.0 (8 November 2026)                                                                         |
-| ----------------------- | ------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| Frame numbering         | Order returned by the file system, not chronological                | Sorted by source file name, in capture order                                                   |
-| iPhone frames           | Roughly every 5th frame, at irregular intervals                     | Every 5th frame, starting with the first                                                       |
-| Canon and GoPro frames  | Same frames as v2.0, numbered differently                           | Same frames as v1.0, numbered differently                                                      |
-| Camera folder names     | `canon_eosr_24mm`, `canon_eosr_35mm`, `gopro_hero7`, `iphone_14pro` | `canon-eosr-24mm`, `canon-eosr-35mm`, `gopro-hero7`, `iphone-14pro`                            |
-| Images                  | Earlier export                                                      | Re-exported and re-anonymized                                                                  |
-| Poses and focal lengths | Earlier adjustment                                                  | Updated: the self-calibrating SfM process was rerun without the affinity and skew terms b1, b2 |
+|                       | v1.0 (27 July 2026)                                                 | v2.0 (8 November 2026)                                                                                                                                     |
+| --------------------- | ------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Frame numbering       | Order returned by the file system, not chronological                | Sorted by source file name, in capture order                                                                                                               |
+| iPhone frames         | Roughly every 5th frame, at irregular intervals                     | Every 5th frame, starting with the first                                                                                                                   |
+| Camera folder names   | `canon_eosr_24mm`, `canon_eosr_35mm`, `gopro_hero7`, `iphone_14pro` | `canon-eosr-24mm`, `canon-eosr-35mm`, `gopro-hero7`, `iphone-14pro`                                                                                        |
+| Images                | Earlier export                                                      | Re-exported and re-anonymized                                                                                                                              |
+| Poses and calibration | Earlier adjustment                                                  | Updated: the self-calibrating SfM process was rerun without the affinity and skew terms b1, b2 (see [Calibration](dataset/query-sequences.md#calibration)) |
 {: .plain-table }
 
-The number of images per sequence is the same in both versions. Of the 1,874 iPhone images in v2.0, 338 are also in v1.0, under different numbers. Poses in v1.0 remain valid for the v1.0 images, but v1.0 sequences are not in temporal order, so they should not be treated as continuous trajectories. The reason for the updated poses and focal lengths is described under [Calibration](dataset/query-sequences.md#calibration).
+The number of images per sequence is the same in both versions, and the Canon and GoPro frames are the same images, numbered differently. Of the 1874 iPhone images in v2.0, 338 are also in v1.0, under different numbers. Poses in v1.0 remain valid for the v1.0 images, but v1.0 sequences are not in temporal order, so they should not be treated as continuous trajectories.
 
 ## Ground-truth generation
 
@@ -98,8 +97,8 @@ Query_sequences/
 │   └── iphone-14pro/               # same internal layout
 ├── scene_2/ … scene_5/             # identical layout
 └── archive/
-    └── v1.0/                       # superseded query data (see Versions)
-        └── scene_1_v1.0.zip … scene_5_v1.0.zip
+    └── v01/                        # superseded query data (see Versions)
+        └── scene_1.zip … scene_5.zip
 ```
 
 #### Metadata schema
@@ -149,24 +148,24 @@ Query_sequences/
 `poses.json`
 ```
 {
-    "1_canon-eosr-35mm_0_2025-02-04_00000.jpg": [
-        -0.18598945809592418,
-        0.6696346370931495,
-        0.7190252946053501,
-        4276721.241549468,
-        0.980576290729368,
-        0.08012077171541336,
-        0.17902737220648932,
-        573610.6339722123,
-        0.06227406793054958,
-        0.7383563602657274,
-        -0.671529467498284,
-        4681650.125424144,
+        "1_canon-eosr-35mm_0_2025-02-04_00000.jpg": [
+        -0.6059003081794297,
+        0.6045343483171625,
+        0.5171296145579134,
+        4276716.34410239,
+        0.6816723538160863,
+        0.059405904000434835,
+        0.7292418944443111,
+        573601.1540910236,
+        0.4101312211852553,
+        0.7943608501648575,
+        -0.448088407721575,
+        4681655.5119934585,
         0.0,
         0.0,
         0.0,
         1.0
-    ]
+        ]
 }
 ```
 *(one entry per image; only one shown here for brevity)*

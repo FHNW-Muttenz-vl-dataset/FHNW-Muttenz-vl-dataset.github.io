@@ -143,7 +143,7 @@ During the reference mapping campaigns, all cameras were triggered synchronously
   </tbody>
 </table>
 
-***Table 2:*** *Number of reference images acquired for our dataset grouped by campaign and camera system. The panorama counts are the total over the five camera heads (4,027 and 4,170 images per head in 2023 and 2025).*
+***Table 2:*** *Number of reference images acquired for our dataset grouped by campaign and camera system. The panorama counts are the total over the five camera heads (4027 and 4170 images per head in 2023 and 2025).*
 
 
 

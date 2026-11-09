@@ -19,7 +19,7 @@ nav_order: 1
 | Coverage                     | Contiguous street network, ~10 km             |
 | Reference mapping campaigns  | 2 (2023, 2025; ~1.5 years apart)               |
 | Query sequences       | 20 (5 scenes each captured with 4 cameras)                                              |
-| Query images          | 5,399                                         |
+| Query images          | 5399                                         |
 | Ground-truth pose accuracy (co-registration) | 6–9 mm in position, < 0.1° in orientation |
 | Georeferencing accuracy      | 2.5 cm                                        |
 {: .plain-table }
